@@ -61,27 +61,27 @@ def Exercice2():
 
 def Exercice3():
     mainArray = np.random.rand(3,3)
-    np.savetxt('mainArray.txt', mainArray)
+    np.savetxt('Ressources/mainArray.txt', mainArray)
     #save an array to a text file
-    np.save('mainArray.npy', mainArray)
+    np.save('Ressources/mainArray.npy', mainArray)
     #save an array to a binary file in .npy format
-    f0 = open('mainArray.txt', 'r')
-    f0bis = np.loadtxt('mainArray.txt')
-    f1 = open('mainArray.npy', 'rb')
-    f1bis = np.load('mainArray.npy')
+    f0 = open('Ressources/mainArray.txt', 'r')
+    f0bis = np.loadtxt('Ressources/mainArray.txt')
+    f1 = open('Ressources/mainArray.npy', 'rb')
+    f1bis = np.load('Ressources/mainArray.npy')
     print(f0.read(), f0bis)
     print(f1.read(), f1bis)
     #open is to open the file and loadtxt is to load the data from the file
 
 def Exercice4():
-    mainArray = np.loadtxt('monalisa.txt')
+    mainArray = np.loadtxt('Ressources/monalisa.txt')
     print(mainArray.ndim, mainArray.shape, mainArray.dtype)
     plt.imshow(mainArray)
     plt.show()
     plt.imshow(mainArray, cmap='gray', vmin=0, vmax=255)
     plt.show()
 
-    nmainArray = np.load('monalisa.npy')
+    nmainArray = np.load('Ressources/monalisa.npy')
     print(nmainArray.ndim, nmainArray.shape, nmainArray.dtype)
     plt.imshow(nmainArray)
     plt.show()
@@ -108,7 +108,7 @@ def Exercice4():
     plt.imshow(mirrorarray)
     plt.show()
 
-    modifiedarray = np.load('monalisa.npy')
+    modifiedarray = np.load('Ressources/monalisa.npy')
     modifiedarray[100:500, 200:600] = 255
     plt.imshow(modifiedarray)
     plt.show()
